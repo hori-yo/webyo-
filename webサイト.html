@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>送信完了</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Noto+Sans+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #F2F6F8;
+    --card: #FFFFFF;
+    --ink: #16232B;
+    --ink-soft: #48606B;
+    --line: #C7D9E0;
+    --accent: #1F8FB3;
+    --accent-deep: #135C78;
+    --accent-soft: #DCF0F5;
+    --gold: #4FD1E0;
+    --radius: 4px;
+    --shadow: 0 24px 60px -32px rgba(19,92,120,0.35);
+  }
+
+  *{ box-sizing:border-box; }
+
+  body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:
+      radial-gradient(1200px 500px at 15% -10%, #E9F3F6 0%, transparent 60%),
+      var(--bg);
+    font-family:'Noto Sans JP', sans-serif;
+    color:var(--ink);
+    padding:20px;
+  }
+
+  .box{
+    width:100%;
+    max-width:440px;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:48px 40px 40px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+
+  .box::before{
+    content:"";
+    position:absolute;
+    top:0; left:0;
+    width:100%;
+    height:3px;
+    background:linear-gradient(90deg, var(--accent) 0%, var(--gold) 100%);
+  }
+
+  .check{
+    width:56px;
+    height:56px;
+    border-radius:50%;
+    background:var(--accent-soft);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 22px;
+  }
+
+  .check svg{
+    width:26px;
+    height:26px;
+  }
+
+  h1{
+    font-family:'Zen Kaku Gothic New', sans-serif;
+    font-weight:700;
+    font-size:19px;
+    color:var(--accent-deep);
+    margin:0 0 12px;
+    letter-spacing:0.02em;
+  }
+
+  p.msg{
+    font-size:14px;
+    color:var(--ink-soft);
+    line-height:1.9;
+    margin:0 0 30px;
+  }
+
+  a.back{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:'Zen Kaku Gothic New', sans-serif;
+    font-size:13.5px;
+    font-weight:700;
+    letter-spacing:0.04em;
+    color:#fff;
+    background:var(--accent-deep);
+    text-decoration:none;
+    padding:13px 26px;
+    border-radius:var(--radius);
+    transition:background .15s ease, transform .15s ease;
+  }
+
+  a.back:hover{
+    background:var(--accent);
+  }
+
+  a.back:active{
+    transform:translateY(1px);
+  }
+
+  a.back .arrow{
+    transition:transform .15s ease;
+  }
+
+  a.back:hover .arrow{
+    transform:translateX(3px);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ transition:none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="box">
+  <div class="check">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 12.5L9.5 18L20 6" stroke="#1F8FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+
+  <h1>送信が完了しました</h1>
+  <p class="msg">ご入力いただきありがとうございます。<br>担当者より内容を確認のうえ、ご連絡いたします。</p>
+
+  <a class="back" href="http://www.use-ebisu.co.jp/">
+    元の画面に戻る <span class="arrow">→</span>
+  </a>
+</div>
+
+</body>
+</html>
